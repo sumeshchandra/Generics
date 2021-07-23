@@ -1,0 +1,30 @@
+package com.dummy;
+
+public class PrintConstructor<T> {
+    private T[] inputArray;
+
+    public PrintConstructor(T[] inputArray) {
+        this.inputArray = inputArray;
+    }
+
+    public void toPrint() {
+        PrintConstructor.toPrint(this.inputArray);
+    }
+
+    public static <E> void toPrint(E[] inputArray) {
+        for (E element : inputArray) {
+            System.out.printf("%s", element);
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Integer[] intArray = {1, 2, 3, 4, 5, 6, 7};
+        Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};
+        Character[] charArray = {'H', 'a', 'H', 'a'};
+
+        PrintArray.toPrint(intArray);
+        PrintArray.toPrint(doubleArray);
+        PrintArray.toPrint(charArray);
+    }
+}
